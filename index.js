@@ -6,10 +6,12 @@ const auxdata =
 
 const arrayified = arrayify("0x" + auxdata);
 
-try {
-  const data = decode(arrayified);
-  console.log(JSON.stringify(data, null, 2));
-} catch (e) {
-  console.log(e);
-  console.log("Auxdata is not a valid CBOR object");
+for (let i = 0; i < 3; i++) {
+  try {
+    const data = decode(arrayified);
+    console.log(JSON.stringify(data, null, 2));
+  } catch (e) {
+    console.log(e);
+    console.log("Auxdata is not a valid CBOR object");
+  }
 }
